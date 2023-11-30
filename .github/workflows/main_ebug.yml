@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'ebug'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_856BAD94350541A2833716733E5845CF }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0475E022BCD74E96ACAB750CD981727B }}

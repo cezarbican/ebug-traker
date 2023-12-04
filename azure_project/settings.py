@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-2#p9z0-d=39&qbu#&f1p6m=2+j!a4_n_r9q%wz192hfwva&24^
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'bugtraker.azurewebsites.net'
+    'localhost'
 ]
 
 

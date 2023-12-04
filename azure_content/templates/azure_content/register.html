@@ -1,0 +1,22 @@
+{% extends "azure_content/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content%}
+
+ 
+<form method="POST" action="">
+    {% csrf_token %}
+
+    <div class="shadowholder">
+        <div class="subtitel2"> 
+            <div> <i class="fas fa-sticky-note icon"></i> Registration Form </div>
+        </div>
+        <div class="content mb-3"> 
+            {{form|crispy}}
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+    </div>
+
+</form>
+
+{% endblock content%}

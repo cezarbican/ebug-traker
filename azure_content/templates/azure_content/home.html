@@ -17,26 +17,21 @@
 
             <div class="factbox2">
                 <div class="factbox-title"> 
-                    <i class="fas fa-project-diagram mr-2"></i> # entries
+                    <i class="fa-solid fa-ticket"></i>
+                    Tickets Found
+                    
                 </div>
                 <div class="factbox-fact"> 
                     {{ project_list|length }}
                 </div>
             </div>
 
-            <div class="factbox2">
-                <div class="factbox-title"> 
-                    <i class="fas fa-chart-line mr-2"></i> Channel
-                </div>
-                <div class="factbox-fact"> 
-                 CBI Analytics
-                </div>
-            </div>
+          
 
 
             <div class="factbox2">
                  <div class="factbox-title"> 
-                   <i class="fas fa-times-circle mr-2"></i> Go to the about page
+                    <i class="fa-solid fa-circle-info"></i> About
                 </div>
                 <div class="factbox-fact"> 
                     <a href="{% url 'about'%}"> <i class="fas fa-play"></i></a>
@@ -72,7 +67,8 @@
                                     <td> {{a.description}} </td>
                                     <td> {{a.created_at|date:'d-m-Y H:i'}}</td>
                                     <td> {{a.edited_at|date:'d-m-Y H:i'}}</td>
-                                    <td> <a href="{% url 'delete' a.id%}">delete</a></td>
+                                    <td> <a class="btn btn-danger btn-sm" href="{% url 'delete' a.id%}">Delete</a>
+                                        <a class="btn btn-secondary btn-sm" href="{% url 'edit' a.id%}">Edit</a></td>
                                 </tr>
                              {%endfor%}
 

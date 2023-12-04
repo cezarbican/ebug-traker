@@ -4,7 +4,7 @@ from .settings import BASE_DIR
 
 
 SECRET_KEY = os.environ['SECRET']
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False

@@ -11,7 +11,7 @@ from django.contrib import messages
 from .models import *
 from .forms import *
 
-# @method_decorator(login_required(login_url='login'), name='dispatch')
+
 class HomeView(ListView):
     context_object_name = 'project_list'
     model = Project
@@ -30,7 +30,7 @@ class AboutView(TemplateView):
         context['title'] = 'About'
         return context
 
-@method_decorator(login_required(login_url='login'), name='dispatch')
+
 class ProjectCreateView(CreateView):
     model = Project
     fields = ['name', 'description']
@@ -42,7 +42,7 @@ class ProjectCreateView(CreateView):
         context['title'] = 'Create'
         return context
     
-@method_decorator(login_required(login_url='login'), name='dispatch')
+
 class ProjectEditView(UpdateView):
     model = Project
     title = 'Edit'
@@ -50,7 +50,7 @@ class ProjectEditView(UpdateView):
     template_name = "azure_content/create.html"
     success_url ="/"
 
-@method_decorator(login_required(login_url='login'), name='dispatch')
+
 class ProjectDeleteView(DeleteView):
     model = Project
     title = 'Delete'
@@ -91,7 +91,7 @@ def Login(request):
         context = {'title' : 'Login'}
         return render(request, 'azure_content/Login.html', context)
 
-@login_required(login_url='login')
+
 def Logout(request):
     logout(request)
     messages.info(request, 'You have logged out!')

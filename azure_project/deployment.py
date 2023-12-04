@@ -5,10 +5,9 @@ from .settings import BASE_DIR
 
 SECRET_KEY = os.environ['SECRET']
 SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
+
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
-DEBUG = False
+DEBUG = True
 
 # WhiteNoise configuration
 MIDDLEWARE = [
@@ -36,12 +35,4 @@ DATABASES = {
         'USER': conn_str_params['user'],
         'PASSWORD': conn_str_params['password'],
     }
-}
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-    ],
-    # Other DRF settings...
 }

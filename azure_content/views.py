@@ -11,7 +11,7 @@ from django.contrib import messages
 from .models import *
 from .forms import *
 
-@method_decorator(login_required(login_url='login'), name='dispatch')
+# @method_decorator(login_required(login_url='login'), name='dispatch')
 class HomeView(ListView):
     context_object_name = 'project_list'
     model = Project
